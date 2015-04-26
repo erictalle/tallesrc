@@ -1,13 +1,16 @@
 body{
     font-family:sans-serif;
+    background-color: #ddd; 
+    padding: 5px;
+    margin: 0px;
 }
 
 #wrapper{
-    width:75%;
-    margin:auto;
+    
 }
 
 #header{
+	  
     background-color:#ccc;
 }
 

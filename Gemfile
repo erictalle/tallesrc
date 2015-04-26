@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+gem 'sinatra', require: 'sinatra/base'
 gem 'haml'
+gem 'sinatra-contrib', require: 'sinatra/reloader'

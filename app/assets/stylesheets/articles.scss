@@ -1,11 +1,32 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$text_color: #000011;
+$background_color: #ffffff;
+$link_hover_color: #00ff00;
+$flash_background: #00ff00;
+$flash_text_color: #ffffff;
+
+
 body {
 	font-family: Arial;
-	background-color: #eee;
+	background-color: $background_color;
 }
 
-.link {
-	color: green;
+a:link {
+	color: $text_color;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: $link_hover_color;
+}
+
+.flash {
+	color: $flash_text_color;
+	font-weight: bold;
+	background-color: $flash_background;
 }

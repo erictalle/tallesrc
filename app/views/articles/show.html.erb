@@ -1,4 +1,4 @@
-<h1><%= @article.title %></h1>
+<h2><%= @article.title %></h2>
 <p><%= @article.body %></p>
 <p>
 	<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Delete post?"} %> 
@@ -6,4 +6,7 @@
 <p>
 	<%= link_to "edit", edit_article_path(@article) %> 
 </p>
+<h4>Comments</h4>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
 <%= link_to "<< Back to Articles List", articles_path, class: 'link' %>

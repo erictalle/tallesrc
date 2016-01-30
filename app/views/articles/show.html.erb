@@ -1,4 +1,8 @@
 <h2><%= @article.title %></h2>
+<p>Tags:
+	<% @article.tags.each do |tag| %>
+		<%= link_to tag.name, tag_path(tag) %>
+	<% end %>
 <p><%= @article.body %></p>
 <p>
 	<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Delete post?"} %> 

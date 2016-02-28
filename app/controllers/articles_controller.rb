@@ -7,17 +7,20 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
-		@comment = Comment.new
-		@comment.article_id = @article.id
+		#@comment = Comment.new
+		#@comment.article_id = @article.id
 	end
 
 	def new
 		@article = Article.new
+		@article.attachments.build
 	end
 
 	def create
 		@article = Article.new(article_params)
-		@article.save!
+		if @article.save
+			params[:images].each { |image| @article.attachments.create(image: image)}
+		end
 
 		flash.notice = "Article '#{@article.title}' Created!"
 
@@ -40,7 +43,9 @@ class ArticlesController < ApplicationController
 	def update
 		@article = Article.find(params[:id])
 		@article.update(article_params)
-
+		if @article.save
+			params[:images].each { |image| @article.attachments.create(image: image)}
+		end
 		flash.notice = "Article '#{@article.title}' Updated!"
 
 		redirect_to article_path(@article)

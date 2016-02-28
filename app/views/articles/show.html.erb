@@ -6,7 +6,7 @@
 </p>
 
 <% @article.attachments.each do |attachment| %>
-	<p><%= image_tag attachment.image.url %></p>
+	<p><%= image_tag attachment.image.url(:thumb) %><%= image_tag attachment.image.url(:medium) %></p>
 <% end %>
 <p><%= @article.body %></p>
 

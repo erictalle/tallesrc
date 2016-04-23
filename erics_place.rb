@@ -10,6 +10,6 @@ require 'haml'
 
 class EricsPlace < Sinatra::Base
   get "/" do
-    "Eric's Place"
+    haml :index
   end
 end

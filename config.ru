@@ -1,2 +1,2 @@
-require File.dirname(__FILE__) + '/erics_place'
-run EricsPlace
+require './erics_place'
+run Sinatra::Application

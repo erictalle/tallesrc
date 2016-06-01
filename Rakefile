@@ -1,15 +1,6 @@
-#!/usr/bin/env rake
-
-#Rakefile
-#require 'sinatra/activerecord/rake'
-
-# namespace :db do
-# 	task :load_config do
-# 		require './config/database'
-# 	end
-# end
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'sinatra/activerecord/rake'
-require_relative 'app/erics_place.rb'
+Rails.application.load_tasks
